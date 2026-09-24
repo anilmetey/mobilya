@@ -34,11 +34,11 @@ function initLoader() {
   if (!loader) return;
 
   const target = 100;
-  const duration = 1200; // ms (ideal luxury timing, perfectly reveals furniture visual)
+  const duration = 1200; // ms
   const startTime = performance.now();
 
-  function step(now) {
-    const elapsed = now - startTime;
+  function step() {
+    const elapsed = Math.max(0, performance.now() - startTime);
     const progress = Math.min(elapsed / duration, 1);
     
     // Smooth natural curve
@@ -57,15 +57,22 @@ function initLoader() {
     } else {
       if (counterEl) counterEl.textContent = '100%';
       if (progressEl) progressEl.style.width = '100%';
+      // Fallback in case transition fails
       setTimeout(() => {
         loader.classList.add('loaded');
         startHeroAutoplay();
       }, 150);
+      
+      // Safety release
+      setTimeout(() => {
+        if(loader.parentNode) loader.style.display = 'none';
+      }, 1000);
     }
   }
 
   requestAnimationFrame(step);
 }
+
 
 /* ==========================================================================
    2. THEME INITIALIZATION

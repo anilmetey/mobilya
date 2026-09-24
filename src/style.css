@@ -70,7 +70,19 @@
   padding: 0;
 }
 
+body {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.4s var(--ease-smooth), color 0.4s var(--ease-smooth);
+}
+
 html {
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   font-size: clamp(13px, 0.85vw + 3px, 17px);
   background-color: var(--bg-primary);
@@ -78,13 +90,6 @@ html {
   scroll-behavior: smooth;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
-}
-
-body {
-  overflow-x: hidden;
-  background-color: var(--bg-primary);
-  color: var(--text-primary);
-  transition: background-color 0.4s var(--ease-smooth), color 0.4s var(--ease-smooth);
 }
 
 /* Custom Selection */
@@ -407,6 +412,10 @@ body {
 .cat-strip-item {
   overflow: hidden;
   min-width: 0;
+  display: flex !important;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 
 .cat-strip-item span:first-child {
@@ -414,7 +423,12 @@ body {
   text-overflow: ellipsis;
   white-space: nowrap;
   min-width: 0;
-  flex: 1;
+  flex: 1 1 auto;
+  display: block;
+}
+
+.cat-strip-item span:last-child {
+  flex-shrink: 0;
 }
 
 /* Wood Showcase — Scroll Reveal */
