@@ -462,6 +462,7 @@ function initCategoryStrip() {
   const titleEl = document.getElementById('cat-strip-title');
 
   items.forEach(item => {
+    // Hover: image preview (desktop only)
     item.addEventListener('mouseenter', () => {
       const img = item.getAttribute('data-img');
       const title = item.querySelector('span:first-child').textContent;
@@ -484,6 +485,26 @@ function initCategoryStrip() {
         }, 120);
       }
       if (titleEl) titleEl.textContent = title.replace(/^\d+\.\s*/, '');
+    });
+
+    // Click: activate filter + scroll to products
+    item.addEventListener('click', (e) => {
+      const filterVal = item.getAttribute('data-filter');
+      if (filterVal) {
+        e.preventDefault();
+        // Update state and re-render products
+        state.activeFilter = filterVal;
+        renderProducts();
+        // Update filter button active states
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+          btn.classList.toggle('active', btn.getAttribute('data-filter') === filterVal);
+        });
+        // Scroll to koleksiyon section
+        const target = document.getElementById('koleksiyon');
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }
     });
   });
 }
