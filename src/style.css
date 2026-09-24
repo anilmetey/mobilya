@@ -414,16 +414,21 @@ html {
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .cat-strip-item span:first-child {
-  flex: 1 1 auto;
+  flex: 1 1 0%;
+  min-width: 0;
   display: block;
   line-height: 1.2;
+  word-wrap: break-word;
 }
 
 .cat-strip-item span:last-child {
   flex-shrink: 0;
+  white-space: nowrap;
 }
 
 /* Wood Showcase — Scroll Reveal */
@@ -670,8 +675,8 @@ html {
 
   /* ---- Categories strip: full width, smaller font ---- */
   .cat-strip-item {
-    font-size: clamp(1.4rem, 6vw, 1.8rem) !important;
-    padding: 1rem 0 !important;
+    font-size: clamp(1.2rem, 5vw, 1.5rem) !important;
+    padding: 0.8rem 0 !important;
   }
   #kategoriler div[style*="grid-template-columns: repeat(12, 1fr)"] {
     grid-template-columns: 1fr !important;
