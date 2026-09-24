@@ -528,9 +528,14 @@ body {
   }
   .header-nav {
     display: none !important;
+    flex: 0 !important;
   }
   .header-atelier-btn {
     display: none !important;
+  }
+  /* When nav is hidden, actions fill remaining space cleanly */
+  .header-actions {
+    margin-left: auto;
   }
   .header-phone-btn {
     padding: 0 1rem;
