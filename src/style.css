@@ -403,18 +403,23 @@ body {
   animation-play-state: paused;
 }
 
-/* NFC Pulsing Signal */
-@keyframes pulse-ring {
-  0% { transform: scale(0.7); opacity: 0.9; }
-  50% { opacity: 0.4; }
-  100% { transform: scale(1.6); opacity: 0; }
+/* Wood Showcase — Scroll Reveal */
+.wood-reveal-block.revealed,
+.wood-stat-card.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
 }
 
-.nfc-pulse-1 {
-  animation: pulse-ring 2.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+/* Wood strip image hover ken burns */
+.wood-strip-img:hover img {
+  transform: scale(1.0) !important;
 }
-.nfc-pulse-2 {
-  animation: pulse-ring 2.2s cubic-bezier(0.215, 0.61, 0.355, 1) infinite 0.7s;
+
+/* Mobile: stat grid stacks */
+@media (max-width: 768px) {
+  .col-full-mobile-grid {
+    grid-template-columns: 1fr !important;
+  }
 }
 
 /* Main Header Layout */

@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initProductsGrid();
   initMegaMenu();
   initCommitments();
-  initNfcSimulator();
+  initWoodShowcase();
   initCategoryStrip();
   initProductModal();
 });
@@ -406,61 +406,44 @@ function initCommitments() {
 /* ==========================================================================
    7. NFC SCANNER SIMULATOR (DENEME KONNEKT)
    ========================================================================== */
-function initNfcSimulator() {
-  const scanBtn = document.getElementById('btn-scan-nfc');
-  const resetBtn = document.getElementById('btn-reset-nfc');
-  const idleScreen = document.getElementById('nfc-screen-idle');
-  const activeScreen = document.getElementById('nfc-screen-active');
-  const phoneContainer = document.getElementById('nfc-phone-screen');
+function initWoodShowcase() {
+  // Scroll-triggered reveal for text blocks and stat cards
+  const revealBlocks = document.querySelectorAll('.wood-reveal-block');
+  const statCards = document.querySelectorAll('.wood-stat-card');
+  const stripImgs = document.querySelectorAll('.wood-strip-img img');
 
-  if (!scanBtn || !idleScreen || !activeScreen) return;
-
-  scanBtn.addEventListener('click', () => {
-    if (phoneContainer) {
-      phoneContainer.style.boxShadow = '0 0 35px var(--accent-color)';
-    }
-
-    scanBtn.innerHTML = `
-      <span class="btn-content" style="gap: 0.6rem;">
-        <span style="display: inline-block; animation: spin 1s infinite linear;">⟳</span>
-        <span>KİMLİK PLAKASI OKUNUYOR...</span>
-      </span>
-    `;
-
+  // Ken Burns: start zoomed slightly, animate out on load
+  stripImgs.forEach(img => {
+    img.style.transform = 'scale(1.08)';
     setTimeout(() => {
-      idleScreen.style.display = 'none';
-      activeScreen.style.display = 'flex';
-      if (phoneContainer) {
-        phoneContainer.style.boxShadow = 'none';
-      }
-      scanBtn.innerHTML = `
-        <span class="btn-panel" style="background: var(--accent-color);"></span>
-        <span class="btn-content" style="gap: 0.8rem;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="20 6 9 17 4 12"></polyline>
-          </svg>
-          <span>SERİ NUMARASI DOĞRULANDI</span>
-        </span>
-      `;
-    }, 900);
+      img.style.transition = 'transform 12s linear';
+      img.style.transform = 'scale(1.0)';
+    }, 200);
   });
 
-  if (resetBtn) {
-    resetBtn.addEventListener('click', () => {
-      activeScreen.style.display = 'none';
-      idleScreen.style.display = 'flex';
-      scanBtn.innerHTML = `
-        <span class="btn-panel" style="background: var(--accent-color);"></span>
-        <span class="btn-content" style="gap: 0.8rem;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
-            <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
-          </svg>
-          <span>CANLI NFC TARAMASINI TEST ET</span>
-        </span>
-      `;
+  const observerOpts = { threshold: 0.15 };
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        // Restart Ken Burns on scroll-in
+        const imgs = entry.target.querySelectorAll('.wood-strip-img img');
+        imgs.forEach(img => {
+          img.style.transition = 'none';
+          img.style.transform = 'scale(1.08)';
+          requestAnimationFrame(() => {
+            setTimeout(() => {
+              img.style.transition = 'transform 12s linear';
+              img.style.transform = 'scale(1.0)';
+            }, 50);
+          });
+        });
+      }
     });
-  }
+  }, observerOpts);
+
+  revealBlocks.forEach(el => observer.observe(el));
+  statCards.forEach(el => observer.observe(el));
 }
 
 /* ==========================================================================

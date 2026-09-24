@@ -373,135 +373,111 @@
     </div>
   </section>
 
-  <!-- ==================== 7. NFC / SMART WOOD (DENEME KONNEKT) ==================== -->
-  <section id="nfc" style="padding: 7rem 1rem; position: relative; overflow: hidden; background: var(--bg-primary);">
+
+  <!-- ==================== 7. ATÖLYE & AHŞAP SHOWCASE ANIMATION ==================== -->
+  <section id="nfc" style="padding: 8rem 1rem; position: relative; overflow: hidden; background: var(--bg-primary);">
+
+    <!-- Decorative wood grain background lines -->
+    <div style="position: absolute; inset: 0; pointer-events: none; overflow: hidden; opacity: 0.04;">
+      <div style="position: absolute; top: 0; left: 15%; width: 1px; height: 100%; background: var(--text-primary);"></div>
+      <div style="position: absolute; top: 0; left: 35%; width: 1px; height: 100%; background: var(--text-primary);"></div>
+      <div style="position: absolute; top: 0; left: 55%; width: 1px; height: 100%; background: var(--text-primary);"></div>
+      <div style="position: absolute; top: 0; left: 75%; width: 1px; height: 100%; background: var(--text-primary);"></div>
+    </div>
+
     <div style="max-width: 1400px; margin: 0 auto; padding: 0 1.5rem;">
-      
-      <!-- Top header -->
-      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem; margin-bottom: 4rem;">
-        <span class="label-caps" style="color: var(--accent-color);">İNOVASYON & TARİH • 03</span>
-        <span class="label-caps" style="color: var(--text-secondary);">DENEME KONNEKT™ NFC TEKNOLOJİSİ</span>
+
+      <!-- Section Header -->
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 1.5rem; margin-bottom: 5rem;">
+        <span class="label-caps" style="color: var(--accent-color);">USTALLIK & ZANAAT • 03</span>
+        <span class="label-caps" style="color: var(--text-secondary);">ATÖLYE ARŞİVİ</span>
       </div>
 
-      <div style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 3.5rem; align-items: center;">
-        
-        <!-- Left: Explanatory Text & Scan Trigger -->
-        <div style="grid-column: span 7;" class="col-full-mobile">
-          <span class="label-caps" style="color: var(--accent-color); background: var(--accent-light); padding: 0.35rem 0.75rem; border-radius: 2px;">DİJİTAL KİMLİK SİSTEMİ</span>
-          <h2 class="font-display" style="font-size: clamp(2.2rem, 4.5vw, 4rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.03em; text-transform: uppercase; margin-top: 1.2rem;">
-            Mobilyanızın Tarihi Parmaklarınızın Ucunda.
-          </h2>
-          <p style="margin-top: 1.8rem; font-size: 1.15rem; line-height: 1.7; color: var(--text-secondary); max-width: 650px;">
-            Her DENEME mobilyası, üzerine el işçiliğiyle perçinlenmiş pirinç bir <strong>DENEME KONNEKT™ NFC plakası</strong> taşır. Akıllı telefonunuzu bu plakaya dokundurduğunuzda, ahşabın hangi tarihi konaktan söküldüğünü, ağaç yaşını ve karbon tasarrufu sertifikasını saniyeler içinde görüntülersiniz.
-          </p>
+      <!-- Large animated statement -->
+      <div class="wood-reveal-block" style="margin-bottom: 5rem; opacity: 0; transform: translateY(40px); transition: opacity 0.9s var(--ease-smooth), transform 0.9s var(--ease-smooth);">
+        <h2 class="font-display" style="font-size: clamp(2.4rem, 6vw, 6rem); font-weight: 800; line-height: 1.05; letter-spacing: -0.04em; text-transform: uppercase; max-width: 900px;">
+          Bir Ağaç Kesilmeden,<br/>
+          <span style="color: var(--accent-color);">Asırlar Yeniden</span><br/>
+          Şekilleniyor.
+        </h2>
+        <p style="margin-top: 2rem; font-size: 1.15rem; line-height: 1.75; color: var(--text-secondary); max-width: 560px;">
+          Anadolu'nun tarihi konaklarından kurtarılan 150–250 yıllık meşe ve kestane kirişler, Mersin Mezitli atölyemizde yeni bir ömre kavuşuyor.
+        </p>
+      </div>
 
-          <!-- Interactive Simulator Trigger Button -->
-          <div style="margin-top: 2.5rem; display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
-            <button id="btn-scan-nfc" class="btn-oak" style="padding: 1.1rem 2rem; background: var(--border-solid); color: var(--bg-primary);">
-              <span class="btn-panel" style="background: var(--accent-color);"></span>
-              <span class="btn-content" style="gap: 0.8rem;">
-                <!-- NFC Icon -->
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
-                  <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
-                </svg>
-                <span>CANLI NFC TARAMASINI TEST ET</span>
-              </span>
-            </button>
-            <span style="font-size: 0.82rem; color: var(--text-muted);">*Uygulama yüklemesi gerektirmez</span>
-          </div>
+      <!-- Animated 3-column stat cards -->
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--border-color); border: 1px solid var(--border-color); margin-bottom: 5rem;" class="col-full-mobile-grid">
 
-          <!-- Feature Bullets -->
-          <div style="margin-top: 3rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; border-top: 1px solid var(--border-color); padding-top: 2rem;">
-            <div>
-              <span class="label-caps" style="color: var(--text-primary); font-size: 0.75rem;">TARİHİ KÖKEN</span>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.4rem;">Safranbolu, Boğaziçi veya Bursa konaklarının orijinal yapım yılı.</p>
-            </div>
-            <div>
-              <span class="label-caps" style="color: var(--text-primary); font-size: 0.75rem;">ZANAATKAR</span>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.4rem;">Parçayı el emeğiyle yontan yerel ustanın atölye damgası.</p>
-            </div>
-            <div>
-              <span class="label-caps" style="color: var(--text-primary); font-size: 0.75rem;">CO₂ TASARRUFU</span>
-              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-top: 0.4rem;">Yeniden kullanım sayesinde önlenen karbon ayak izi.</p>
-            </div>
-          </div>
+        <div class="wood-stat-card" style="background: var(--bg-primary); padding: 2.8rem 2.2rem; opacity: 0; transform: translateY(30px); transition: opacity 0.8s var(--ease-smooth) 0.1s, transform 0.8s var(--ease-smooth) 0.1s;">
+          <div class="font-display" style="font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; color: var(--text-primary); letter-spacing: -0.04em; line-height: 1;">180+</div>
+          <div style="width: 2.5rem; height: 2px; background: var(--accent-color); margin: 1rem 0;"></div>
+          <div class="label-caps" style="color: var(--text-secondary); margin-bottom: 0.5rem;">ORTALAMA AHŞAP YAŞI</div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Osmanlı ve erken Cumhuriyet döneminden gelen meşe kirişler</p>
         </div>
 
-        <!-- Right: Interactive Smartphone & NFC Plate Simulator Mockup -->
-        <div style="grid-column: span 5; display: flex; justify-content: center;" class="col-full-mobile">
-          <div style="position: relative; width: 320px; border: 2px solid var(--border-solid); border-radius: 40px; padding: 1rem; background: var(--bg-card); box-shadow: 0 25px 60px -15px rgba(0,0,0,0.15);">
-            
-            <!-- Phone Speaker & Notch -->
-            <div style="width: 70px; height: 5px; background: var(--border-solid); border-radius: 3px; margin: 0.5rem auto 1.2rem auto;"></div>
-
-            <!-- Phone Screen Area -->
-            <div id="nfc-phone-screen" style="border: 1px solid var(--border-color); border-radius: 28px; padding: 1.5rem; min-height: 480px; background: var(--bg-primary); display: flex; flex-direction: column; justify-content: space-between; text-align: center; position: relative; overflow: hidden;">
-              
-              <!-- Idle State -->
-              <div id="nfc-screen-idle" style="display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1;">
-                
-                <!-- Pulsing Radar Waves -->
-                <div style="position: relative; width: 100px; height: 100px; margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center;">
-                  <div class="nfc-pulse-1" style="position: absolute; inset: 0; border: 2px solid var(--accent-color); border-radius: 50%;"></div>
-                  <div class="nfc-pulse-2" style="position: absolute; inset: -15px; border: 1.5px solid var(--accent-color); border-radius: 50%;"></div>
-                  <div style="width: 55px; height: 55px; background: var(--border-solid); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; z-index: 2;">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                      <path d="M2 16.1A5 5 0 0 1 5.9 20M2 12.05A9 9 0 0 1 9.95 20M2 8A13 13 0 0 1 14 20"></path>
-                      <line x1="2" y1="20" x2="2.01" y2="20"></line>
-                    </svg>
-                  </div>
-                </div>
-
-                <div class="label-caps" style="color: var(--accent-color); font-weight: 800;">DENEME KONNEKT™</div>
-                <div class="font-display" style="font-size: 1.15rem; font-weight: 700; margin-top: 0.5rem;">Cihazınızı Yaklaştırın</div>
-                <p style="font-size: 0.78rem; color: var(--text-secondary); margin-top: 0.5rem;">Mobilyanızın sağ köşesindeki metal logoya dokundurun.</p>
-              </div>
-
-              <!-- Scanned Certificate State (Hidden by default) -->
-              <div id="nfc-screen-active" style="display: none; flex-direction: column; justify-content: space-between; flex: 1; text-align: left; animation: fadeIn 0.4s ease;">
-                <div>
-                  <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); padding-bottom: 0.6rem; margin-bottom: 0.8rem;">
-                    <span class="label-caps" style="color: var(--accent-color); font-size: 0.6rem;">ORİJİNALLİK SERTİFİKASI</span>
-                    <span style="font-size: 0.65rem; background: #e0f2fe; color: #0369a1; padding: 2px 6px; border-radius: 4px; font-weight: 700;">TESCİLLİ</span>
-                  </div>
-
-                  <div class="font-display" style="font-size: 1.25rem; font-weight: 800; color: var(--text-primary);">Descartes Masif Bank</div>
-                  <div style="font-size: 0.75rem; color: var(--text-secondary); margin-bottom: 1rem;">Seri No: DNM-DESC-1830-KAP</div>
-
-                  <div style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 0.75rem; border-radius: 8px; font-size: 0.75rem; display: flex; flex-direction: column; gap: 0.5rem;">
-                    <div>
-                      <span style="color: var(--text-muted); font-size: 0.65rem; display: block;">ORİJİNAL YAPI</span>
-                      <strong>Güzelyurt Taş Konağı, Kapadokya (1830)</strong>
-                    </div>
-                    <div>
-                      <span style="color: var(--text-muted); font-size: 0.65rem; display: block;">AĞAÇ YAŞI</span>
-                      <strong>~195 Yıllık Masif Meşe Kiriş</strong>
-                    </div>
-                    <div>
-                      <span style="color: var(--text-muted); font-size: 0.65rem; display: block;">KARBON TASARRUFU</span>
-                      <strong style="color: #15803d;">95 kg CO₂e Önlenen Emisyon</strong>
-                    </div>
-                    <div>
-                      <span style="color: var(--text-muted); font-size: 0.65rem; display: block;">USTA & ATÖLYE</span>
-                      <strong>Atölye No: 01 (Mezitli / Mersin)</strong>
-                    </div>
-                  </div>
-                </div>
-
-                <div style="margin-top: 1rem; border-top: 1px solid var(--border-color); padding-top: 0.75rem; text-align: center;">
-                  <button id="btn-reset-nfc" style="background: none; border: none; font-size: 0.7rem; color: var(--text-secondary); text-decoration: underline; cursor: pointer;">Tekrar Tara ↺</button>
-                </div>
-              </div>
-
-              <!-- Phone Bottom Home Indicator -->
-              <div style="width: 100px; height: 4px; background: var(--border-solid); border-radius: 2px; margin: 0.8rem auto 0 auto;"></div>
-
-            </div>
-
-          </div>
+        <div class="wood-stat-card" style="background: var(--bg-primary); padding: 2.8rem 2.2rem; opacity: 0; transform: translateY(30px); transition: opacity 0.8s var(--ease-smooth) 0.25s, transform 0.8s var(--ease-smooth) 0.25s;">
+          <div class="font-display" style="font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; color: var(--accent-color); letter-spacing: -0.04em; line-height: 1;">%100</div>
+          <div style="width: 2.5rem; height: 2px; background: var(--text-primary); margin: 1rem 0;"></div>
+          <div class="label-caps" style="color: var(--text-secondary); margin-bottom: 0.5rem;">KURTARILMIŞ MASIF</div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Sıfır ağaç kesimi — tüm ahşap yıkımdan kurtarılmış yapılardan</p>
         </div>
 
+        <div class="wood-stat-card" style="background: var(--bg-primary); padding: 2.8rem 2.2rem; opacity: 0; transform: translateY(30px); transition: opacity 0.8s var(--ease-smooth) 0.4s, transform 0.8s var(--ease-smooth) 0.4s;">
+          <div class="font-display" style="font-size: clamp(2.5rem, 5vw, 4.5rem); font-weight: 800; color: var(--text-primary); letter-spacing: -0.04em; line-height: 1;">El</div>
+          <div style="width: 2.5rem; height: 2px; background: var(--accent-color); margin: 1rem 0;"></div>
+          <div class="label-caps" style="color: var(--text-secondary); margin-bottom: 0.5rem;">İŞÇİLİĞİ</div>
+          <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.6;">Her parça, Mersin Mezitli atölyemizde ustalar tarafından tek tek işleniyor</p>
+        </div>
+
+      </div>
+
+      <!-- Horizontal scrolling image strip with animation -->
+      <div class="wood-reveal-block" style="opacity: 0; transform: translateY(30px); transition: opacity 0.9s var(--ease-smooth) 0.15s, transform 0.9s var(--ease-smooth) 0.15s;">
+        <div style="display: flex; gap: 1px; overflow: hidden; background: var(--border-color);">
+
+          <!-- Image 1 -->
+          <div class="wood-strip-img" style="flex: 2; min-height: 420px; overflow: hidden; position: relative; background: var(--bg-secondary);">
+            <img src="https://www.oakame.com/wp-content/uploads/2026/03/Table-Delacroix-page-accueil.jpg"
+                 alt="Masif Yemek Masası"
+                 style="width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.08); transition: transform 8s linear;"
+                 loading="lazy" />
+            <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; background: linear-gradient(to top, rgba(28,26,23,0.75), transparent);">
+              <div class="label-caps" style="color: rgba(255,255,255,0.65); font-size: 0.6rem;">DELACROIX SERİSİ</div>
+              <div class="font-display" style="color: #fff; font-size: 1.1rem; font-weight: 700; margin-top: 0.2rem;">Masif Yemek Masası</div>
+            </div>
+          </div>
+
+          <!-- Right column: 2 stacked images -->
+          <div style="flex: 1; display: flex; flex-direction: column; gap: 1px;">
+            <div class="wood-strip-img" style="flex: 1; min-height: 207px; overflow: hidden; position: relative; background: var(--bg-secondary);">
+              <img src="https://www.oakame.com/wp-content/uploads/2026/03/Zola-Page-accueil-1.jpg"
+                   alt="Masif Koltuk"
+                   style="width: 100%; height: 100%; object-fit: cover; object-position: center 30%; transform: scale(1.08); transition: transform 8s linear;"
+                   loading="lazy" />
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem; background: linear-gradient(to top, rgba(28,26,23,0.7), transparent);">
+                <div class="label-caps" style="color: rgba(255,255,255,0.65); font-size: 0.6rem;">ZOLA SERİSİ</div>
+                <div class="font-display" style="color: #fff; font-size: 0.95rem; font-weight: 700;">Masif Köşe Koltuk</div>
+              </div>
+            </div>
+            <div class="wood-strip-img" style="flex: 1; min-height: 207px; overflow: hidden; position: relative; background: var(--bg-secondary);">
+              <img src="https://www.oakame.com/wp-content/uploads/2024/05/Bonaparte-Ambiance-Site-internet-1.jpg"
+                   alt="Masif Bank"
+                   style="width: 100%; height: 100%; object-fit: cover; object-position: center; transform: scale(1.08); transition: transform 8s linear;"
+                   loading="lazy" />
+              <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 1rem; background: linear-gradient(to top, rgba(28,26,23,0.7), transparent);">
+                <div class="label-caps" style="color: rgba(255,255,255,0.65); font-size: 0.6rem;">BONAPARTE SERİSİ</div>
+                <div class="font-display" style="color: #fff; font-size: 0.95rem; font-weight: 700;">Masif Sandalye</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Caption row -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 1.5rem; border-top: 1px solid var(--border-color); margin-top: 1px;">
+          <span class="label-caps" style="color: var(--text-muted); font-size: 0.62rem;">MEZİTLİ / MERSİN ATÖLYE ARŞİVİ — DEVAM EDEN SERİLER</span>
+          <a href="#koleksiyon" class="label-caps" style="color: var(--accent-color); text-decoration: none; font-size: 0.62rem; transition: opacity 0.2s;" onmouseover="this.style.opacity=0.6" onmouseout="this.style.opacity=1">TÜM KOLEKSİYON ↗</a>
+        </div>
       </div>
 
     </div>
