@@ -410,8 +410,6 @@ html {
 
 /* Category Strip Items */
 .cat-strip-item {
-  overflow: hidden;
-  min-width: 0;
   display: flex !important;
   justify-content: space-between;
   align-items: center;
@@ -419,12 +417,9 @@ html {
 }
 
 .cat-strip-item span:first-child {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  min-width: 0;
   flex: 1 1 auto;
   display: block;
+  line-height: 1.2;
 }
 
 .cat-strip-item span:last-child {
@@ -675,7 +670,12 @@ html {
 
   /* ---- Categories strip: full width, smaller font ---- */
   .cat-strip-item {
-    font-size: clamp(1.4rem, 7vw, 2rem) !important;
+    font-size: clamp(1.4rem, 6vw, 1.8rem) !important;
+    padding: 1rem 0 !important;
+  }
+  #kategoriler div[style*="grid-template-columns: repeat(12, 1fr)"] {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
   }
   #kategoriler div[style*="grid-column: span 5"] {
     display: none !important;
